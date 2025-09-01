@@ -1,0 +1,204 @@
+﻿@page "/"
+@inject LocalizationService Localization
+@implements IAsyncDisposable
+
+<div class="restaurant-container">
+    <!-- Header Section -->
+    <header class="restaurant-header">
+        <div class="logo-section">
+            <img src="Resources/logo.jpg" alt="Aras Döner Logo" class="logo" />
+            <h1>@Localization.GetString("RestaurantName")</h1>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="Resources/doner-meat.jpg" alt="Döner Fleisch" class="hero-image" />
+        <div class="hero-content">
+            <h2>@Localization.GetString("Welcome")</h2>
+            <p>@Localization.GetString("HeroDescription")</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <h2>@Localization.GetString("OurMenu")</h2>
+        
+        <div class="menu-grid">
+            <!-- Döner Variants -->
+            <div class="menu-category">
+                <h3>@Localization.GetString("DonerVariants")</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("DonerKebab")</h4>
+                        <p>@Localization.GetString("DonerKebabDesc")</p>
+                        <span class="price">€7.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("DonerTasche")</h4>
+                        <p>@Localization.GetString("DonerTascheDesc")</p>
+                        <span class="price">€6.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("DonerTeller")</h4>
+                        <p>@Localization.GetString("DonerTellerDesc")</p>
+                        <span class="price">€9.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("DonerBox")</h4>
+                        <p>@Localization.GetString("DonerBoxDesc")</p>
+                        <span class="price">€8.50</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialties -->
+            <div class="menu-category">
+                <h3>@Localization.GetString("Specialties")</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("Iskender")</h4>
+                        <p>@Localization.GetString("IskenderDesc")</p>
+                        <span class="price">€12.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("Lahmacun")</h4>
+                        <p>@Localization.GetString("LahmacunDesc")</p>
+                        <span class="price">€5.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("Durum")</h4>
+                        <p>@Localization.GetString("DurumDesc")</p>
+                        <span class="price">€7.00</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("Yufka")</h4>
+                        <p>@Localization.GetString("YufkaDesc")</p>
+                        <span class="price">€7.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sides -->
+            <div class="menu-category">
+                <h3>@Localization.GetString("Sides")</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("Pommes")</h4>
+                        <p>@Localization.GetString("PommesDesc")</p>
+                        <span class="price">€3.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("Salat")</h4>
+                        <p>@Localization.GetString("SalatDesc")</p>
+                        <span class="price">€4.00</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("Brot")</h4>
+                        <p>@Localization.GetString("BrotDesc")</p>
+                        <span class="price">€1.00</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("Sos")</h4>
+                        <p>@Localization.GetString("SosDesc")</p>
+                        <span class="price">€0.50</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drinks -->
+            <div class="menu-category">
+                <h3>@Localization.GetString("Drinks")</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("Cola")</h4>
+                        <p>@Localization.GetString("ColaDesc")</p>
+                        <span class="price">€2.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("Wasser")</h4>
+                        <p>@Localization.GetString("WasserDesc")</p>
+                        <span class="price">€2.00</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("Ayran")</h4>
+                        <p>@Localization.GetString("AyranDesc")</p>
+                        <span class="price">€2.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>@Localization.GetString("Saft")</h4>
+                        <p>@Localization.GetString("SaftDesc")</p>
+                        <span class="price">€3.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="ingredients-section">
+        <div class="ingredients-content">
+            <div class="ingredients-text">
+                <h2>@Localization.GetString("FreshIngredients")</h2>
+                <p>@Localization.GetString("IngredientsDescription")</p>
+            </div>
+            <img src="Resources/doner-ingredients.jpg" alt="Frische Zutaten" class="ingredients-image" />
+        </div>
+    </section>
+
+    <!-- Final Product Section -->
+    <section class="final-product-section">
+        <img src="Resources/final-doner.jpg" alt="Perfekter Döner" class="final-product-image" />
+        <div class="final-product-content">
+            <h2>@Localization.GetString("QualityPromise")</h2>
+            <p>@Localization.GetString("QualityDescription")</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-content" style="background-image: url('Resources/location-bg.jpg');">
+            <div class="contact-overlay">
+                <h2>@Localization.GetString("ContactUs")</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>@Localization.GetString("Address")</h3>
+                        <p>Eyberstraße 43</p>
+                        <p>91522 Ansbach</p>
+                        <p>Deutschland</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>@Localization.GetString("Phone")</h3>
+                        <p>+49 981 21485860</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>@Localization.GetString("Hours")</h3>
+                        <p>@Localization.GetString("HoursText")</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="restaurant-footer">
+        <p>&copy; 2024 Aras Döner. @Localization.GetString("AllRightsReserved")</p>
+    </footer>
+</div>
+
+@code {
+    private bool _isInitialized = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Localization.InitializeAsync();
+        _isInitialized = true;
+        await base.OnInitializedAsync();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        // Cleanup if needed
+        await Task.CompletedTask;
+    }
+}
